@@ -31,7 +31,7 @@ Route::post('/login', function( Request $request ) {
 
 });
 
-Route::post('/teste-deploy', function( Request $request ) {
+Route::get('/teste-deploy', function( Request $request ) {
 
     return response()->json([
         'status' => 'success',
