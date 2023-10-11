@@ -9,8 +9,10 @@ export default defineConfig({
         }),
     ],
 
-});
+      // Configurações de construção
+    build: {
+        target: 'esnext', // ou 'es2015' para suporte a navegadores mais antigos
+        outDir: 'dist', // Diretório de saída
+    },
 
-module.exports = {
-    outputDir: 'dist'
-  }
+});
