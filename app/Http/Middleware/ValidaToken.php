@@ -23,15 +23,15 @@ class ValidaToken
         try {
             $user = JWTAuth::parseToken()->authenticate();
         } catch (TokenExpiredException $e) {
-            return response()->json(['error' => 'Token expirado'], 401);
+            return response()->json(['message' => 'Token expirado'], 401);
         } catch (TokenInvalidException $e) {
-            return response()->json(['error' => 'Token inválido'], 401);
+            return response()->json(['message' => 'Token inválido'], 401);
         } catch (JWTException $e) {
-            return response()->json(['error' => 'Token ausente'], 401);
+            return response()->json(['message' => 'Token ausente'], 401);
         }
 
         if (!$user) {
-            return response()->json(['error' => 'Usuário não encontrado'], 404);
+            return response()->json(['message' => 'Usuário não encontrado'], 404);
         }
 
         Auth::login($user);
