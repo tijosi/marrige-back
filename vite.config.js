@@ -8,4 +8,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+
 });
+
+module.exports = {
+    outputDir: 'dist'
+  }
