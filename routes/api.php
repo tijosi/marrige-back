@@ -31,6 +31,15 @@ Route::post('/login', function( Request $request ) {
 
 });
 
+Route::post('/teste-deploy', function( Request $request ) {
+
+    return response()->json([
+        'status' => 'success',
+        'data' => 'Deu Certo Moleque!'
+    ]);
+
+});
+
 
 Route::middleware(['valida.token'])->group(function () {
 
